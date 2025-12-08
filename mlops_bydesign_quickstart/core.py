@@ -10,8 +10,26 @@ def create_experiment(
     root_entries="root_files"
 ):
     """
-    Creates experiment setup from YAML config file
+    Create an experiment setup from a YAML configuration file.
+
+    This function reads a YAML configuration file to create a folder structure
+    and files for machine learning experiments. It supports creating module
+    folders, initializing Python files, and organizing modules into a pipeline  
+    using an MLOps by design approach.
+
+    Args:
+        yaml_path (str): Path to the YAML configuration file.
+        module_count (int, optional): Maximum number of modules to include in
+            the pipeline. Defaults to 10.
+        module_entries (str, optional): Key in the YAML file for module names.
+            Defaults to "module_names".
+        root_entries (str, optional): Key in the YAML file for root-level files.
+            Defaults to "root_files".
+
+    Returns:
+        None
     """
+
     # Ingest YAML file
     try:
         with open(yaml_path, "r") as file:
