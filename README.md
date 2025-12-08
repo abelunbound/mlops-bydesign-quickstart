@@ -25,42 +25,34 @@ Create a file named `my_experiment_modules.yaml` (you can copy example below int
 
 ```yaml
 module_names:
-  data_ingestion:
-    - load_data
-    - validate_data
-    - preprocess_data
-  
-  feature_engineering:
-    - create_features
-    - select_features
-    - transform_features
-  
-  model_training:
-    - train_model
-    - tune_hyperparameters
-    - cross_validate
-  
-  model_evaluation:
-    - evaluate_model
-    - generate_metrics
-    - create_reports
-  
-  model_deployment:
-    - save_model
-    - deploy_model
-    - monitor_performance
-  
-  drift_detection:
-    - detect_data_drift
-    - detect_model_drift
-    - alert_system
-  
-  continuous_training:
-    - retrain_pipeline
-    - update_models
-    - validate_improvements
+  00_config:
+    - config_file
+  01_data_ingestion_and_cleaning:
+  02_exploratory_data_analysis:
+  03_feature_engineering:
+  04_feature_selection:
+  05_data_preprocessing:
+  06_model_training_and_evaluation:
+    - training
+    - evaluation
+    - hyperparameter_tuning
+  07_mlops_model_monitoring:
+    - drift_detection
+    - experiments_log_tracking
+    - artifact_tracking
+  08_model_serving:
+    - api_deployment
+    - batch_inference_pipeline
+  09_mlops_orchestration:
+  ml_pipeline: []
+  assets: []
+  layouts: []
+  test_suite: []
+  documentation: []
 
-root_files:
+root_entries:
+  - app.py
+  - .env
   - README.md
   - requirements.txt
   - config.yaml
@@ -81,43 +73,51 @@ create_experiment("my_project.yaml")
 Your project structure will be created:
 
 ```
-ml_pipeline/
-├── data_ingestion/
-│   ├── __init__.py
-│   ├── load_data.py
-│   ├── validate_data.py
-│   └── preprocess_data.py
-├── feature_engineering/
-│   ├── __init__.py
-│   ├── create_features.py
-│   ├── select_features.py
-│   └── transform_features.py
-├── model_training/
-│   ├── __init__.py
-│   ├── train_model.py
-│   ├── tune_hyperparameters.py
-│   └── cross_validate.py
-├── model_evaluation/
-│   ├── __init__.py
-│   ├── evaluate_model.py
-│   ├── generate_metrics.py
-│   └── create_reports.py
-├── model_deployment/
-│   ├── __init__.py
-│   ├── save_model.py
-│   ├── deploy_model.py
-│   └── monitor_performance.py
-├── drift_detection/
-│   ├── __init__.py
-│   ├── detect_data_drift.py
-│   ├── detect_model_drift.py
-│   └── alert_system.py
-└── continuous_training/
-    ├── __init__.py
-    ├── retrain_pipeline.py
-    ├── update_models.py
-    └── validate_improvements.py
+assets/
+└── __init__.py
 
+layouts/
+└── __init__.py
+
+test_suite/
+└── __init__.py
+
+documentation/
+└── __init__.py
+
+ml_pipeline/
+├── 00_config/
+│   ├── __init__.py
+│   └── config_file.py
+├── 01_data_ingestion_and_cleaning/
+│   └── __init__.py
+├── 02_exploratory_data_analysis/
+│   └── __init__.py
+├── 03_feature_engineering/
+│   └── __init__.py
+├── 04_feature_selection/
+│   └── __init__.py
+├── 05_data_preprocessing/
+│   └── __init__.py
+├── 06_model_training_and_evaluation/
+│   ├── __init__.py
+│   ├── training.py
+│   ├── evaluation.py
+│   └── hyperparameter_tuning.py
+├── 07_mlops_model_monitoring/
+│   ├── __init__.py
+│   ├── drift_detection.py
+│   ├── experiments_log_tracking.py
+│   └── artifact_tracking.py
+├── 08_model_serving/
+│   ├── __init__.py
+│   ├── api_deployment.py
+│   └── batch_inference_pipeline.py
+└── 09_mlops_orchestration/
+    └── __init__.py
+
+app.py
+.env
 README.md
 requirements.txt
 config.yaml
