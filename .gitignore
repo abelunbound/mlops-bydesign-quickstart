@@ -1,2 +1,6 @@
 venv/
 venv
+*.egg-info/
+PKG-INFO
+*.txt
+test_setup.py
