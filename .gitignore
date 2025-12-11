@@ -4,3 +4,4 @@ venv
 PKG-INFO
 *.txt
 test_setup.py
+*.pyc

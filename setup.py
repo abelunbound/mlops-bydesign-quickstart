@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="mlops-bydesign-quickstart",
-    version="0.1.0",
+    version="0.1.2",
     author="Abel O. Akeni",
     description="""Quickly create ML experiments with standardized folder 
     structures and tools for implementing key aspects of MLOps throughout 
