@@ -1,6 +1,6 @@
 # Overview
 
-Quickly create ML experiments with standardized folder structures and tools for implementing key aspects of MLOps throughout your project's lifecycle from folder set up to model training, evaluation, hyperparameter tuning; model serving, demo, drift detection and continuous training.
+Quickly create ML experiments with standardized folder structures and tools for implementing key aspects of MLOps throughout your project's lifecycle from setup to app demo and ongoing model monitoring, drift detection and continuous training.
 
 ## Use Cases
 
